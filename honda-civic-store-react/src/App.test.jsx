@@ -11,7 +11,7 @@ describe('App Component', () => {
         <App />
       </BrowserRouter>
     );
-    let element = screen.getByText(/1998/i);
+    let element = screen.getByText(/Honda/i);
     expect(element).toBeInTheDocument();
   });
 });

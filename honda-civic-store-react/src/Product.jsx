@@ -1,6 +1,7 @@
 function Product({ products = [] }) {
   return (
     <>
+      <h1>A Honda Civic</h1>
     <h1>This is the product page</h1>
     <div>product</div>
       {products.map((product, index) => (

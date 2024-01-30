@@ -1,18 +1,17 @@
 import { describe, expect, it } from 'vitest';
-import { getAllByAltText, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/vitest';
-import { BrowserRouter } from 'react-router-dom';
 import NavigationItem from './NavigationItem';
+import { BrowserRouter } from 'react-router-dom';
 
-describe('Navigation Item Component',  () => {
-  it('Renders', async() => {
+describe('NavigationItem Component', () => {
+  it('Renders', () => {
     render(
       <BrowserRouter>
-        <NavigationItem link = "homepage.com" title = "honda" />
+        <NavigationItem link="http://testlink.com" title="Test Item" />
       </BrowserRouter>
     );
-
-    let element = await screen.findAllByText(/honda/i);
-    expect(element[0]).toBeInTheDocument();
+    let element = screen.getByText(/Test Item/i);
+    expect(element).toBeInTheDocument();
   });
 });
